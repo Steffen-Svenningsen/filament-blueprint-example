@@ -14,10 +14,12 @@ class UserForm
                 TextInput::make('name')
                     ->required(),
                 TextInput::make('username')
-                    ->required(),
+                    ->required()
+                    ->unique(),
                 TextInput::make('email')
                     ->label('Email address')
-                    ->email(),
+                    ->email()
+                    ->unique(),
                 TextInput::make('password')
                     ->password()
                     ->required(),

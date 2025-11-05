@@ -25,8 +25,6 @@ class TasksTable
                     ->searchable(),
                 TextColumn::make('customer.name')
                     ->searchable(),
-                TextColumn::make('user.name')
-                    ->searchable(),
                 TextColumn::make('workType.name')
                     ->searchable(),
                 TextColumn::make('work_date')
