@@ -23,7 +23,6 @@ class Task extends Model
         'customer_id',
         'user_id',
         'work_type_id',
-        'work_date',
         'hours',
         'break_hours',
         'comment',
@@ -45,7 +44,6 @@ class Task extends Model
             'customer_id' => 'integer',
             'user_id' => 'integer',
             'work_type_id' => 'integer',
-            'work_date' => 'datetime',
             'hours' => 'decimal:2',
             'break_hours' => 'decimal:2',
         ];

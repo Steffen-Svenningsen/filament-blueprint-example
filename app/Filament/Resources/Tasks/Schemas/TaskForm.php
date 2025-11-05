@@ -2,7 +2,6 @@
 
 namespace App\Filament\Resources\Tasks\Schemas;
 
-use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -28,8 +27,6 @@ class TaskForm
                     ->relationship('customer', 'name'),
                 Select::make('work_type_id')
                     ->relationship('workType', 'name'),
-                DateTimePicker::make('work_date')
-                    ->required(),
                 TextInput::make('hours')
                     ->required()
                     ->numeric(),

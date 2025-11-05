@@ -27,9 +27,6 @@ class TasksTable
                     ->searchable(),
                 TextColumn::make('workType.name')
                     ->searchable(),
-                TextColumn::make('work_date')
-                    ->dateTime()
-                    ->sortable(),
                 TextColumn::make('hours')
                     ->numeric()
                     ->sortable(),

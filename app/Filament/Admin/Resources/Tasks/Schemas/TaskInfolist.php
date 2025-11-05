@@ -29,8 +29,6 @@ class TaskInfolist
                 TextEntry::make('workType.name')
                     ->label('Work type')
                     ->placeholder('-'),
-                TextEntry::make('work_date')
-                    ->dateTime(),
                 TextEntry::make('hours')
                     ->numeric(),
                 TextEntry::make('break_hours')

@@ -2,8 +2,6 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Models\Area;
 use App\Models\Customer;
 use App\Models\Grave;
@@ -12,6 +10,7 @@ use App\Models\Task;
 use App\Models\TaskType;
 use App\Models\User;
 use App\Models\WorkType;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TaskFactory extends Factory
 {
@@ -35,7 +34,6 @@ class TaskFactory extends Factory
             'customer_id' => Customer::factory(),
             'user_id' => User::factory(),
             'work_type_id' => WorkType::factory(),
-            'work_date' => fake()->dateTime(),
             'hours' => fake()->randomFloat(2, 0, 999.99),
             'break_hours' => fake()->randomFloat(2, 0, 999.99),
             'comment' => fake()->text(),
