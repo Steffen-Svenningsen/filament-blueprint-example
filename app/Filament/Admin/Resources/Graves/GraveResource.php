@@ -22,6 +22,11 @@ class GraveResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    public static function getNavigationLabel(): string
+    {
+        return __('Graves');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return GraveForm::configure($schema);

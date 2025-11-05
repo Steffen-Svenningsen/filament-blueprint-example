@@ -1,0 +1,26 @@
+{
+    "__AUTH__": "========== Auth ==========",
+    "Username": "Username",
+
+    "__DASHBOARD__": "========== Dashboard ==========",
+
+    "__SIDEBAR NAV__": "========== Sidebar Nav ==========",
+    "Areas": "Areas",
+    "Graves": "Graves",
+    "Customers": "Customers",
+    "Services": "Machines and Services",
+    "Task Types": "Task Types",
+    "Tasks": "Tasks",
+    "Work Types": "Work Types",
+
+    "__GENERAL__": "========== General ==========",
+    "Name": "Name",
+    "Phone": "Phone",
+    "Email address": "Email address",
+    "Created at": "Created at",
+    "Updated at": "Updated at",
+    "Go to App": "Go to App",
+    "Go to Admin Panel": "Go to Admin Panel",
+    "My Profile": "My Profile",
+    "my-profile": "my-profile"
+}

@@ -12,11 +12,13 @@ class CustomerForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label(__('Customer name'))
                     ->required(),
                 TextInput::make('phone')
+                    ->label(__('Phone number'))
                     ->tel(),
                 TextInput::make('email')
-                    ->label('Email address')
+                    ->label(__('Email address'))
                     ->email(),
             ]);
     }

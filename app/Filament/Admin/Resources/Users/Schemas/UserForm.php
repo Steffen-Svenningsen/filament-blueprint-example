@@ -17,7 +17,7 @@ class UserForm
                     ->required()
                     ->unique(),
                 TextInput::make('email')
-                    ->label('Email address')
+                    ->label(__('Email address'))
                     ->email()
                     ->unique(),
                 TextInput::make('password')

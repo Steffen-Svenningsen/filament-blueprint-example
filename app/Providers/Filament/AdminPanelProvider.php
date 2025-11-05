@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Auth\Login;
+use Filament\Actions\Action;
 use Filament\Enums\ThemeMode;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -20,7 +21,10 @@ use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Joaopaulolndev\FilamentEditProfile\FilamentEditProfilePlugin;
+use Joaopaulolndev\FilamentEditProfile\Pages\EditProfilePage;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -30,7 +34,6 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login(Login::class)
-            ->profile()
             ->spa()
             ->defaultThemeMode(ThemeMode::Light)
             ->colors([
@@ -46,9 +49,23 @@ class AdminPanelProvider extends PanelProvider
                 AccountWidget::class,
                 FilamentInfoWidget::class,
             ])
+            ->plugins([
+                FilamentEditProfilePlugin::make()
+                    ->shouldShowBrowserSessionsForm(false)
+                    ->setIcon('heroicon-o-user-circle')
+                    ->setTitle(fn (): string => __('My Profile'))
+                    ->slug('my-profile')
+                    ->setNavigationLabel(fn (): string => __('My Profile')),
+            ])
+            ->userMenuItems([
+                'profile' => Action::make('profile')
+                    ->label(fn () => Auth::user()->name)
+                    ->url(fn (): string => EditProfilePage::getUrl())
+                    ->icon('heroicon-o-user-circle'),
+            ])
             ->navigationItems([
                 NavigationItem::make()
-                    ->label('Go to App')
+                    ->label(fn (): string => __('Go to App'))
                     ->url('/')
                     ->icon('heroicon-o-globe-alt'),
             ])

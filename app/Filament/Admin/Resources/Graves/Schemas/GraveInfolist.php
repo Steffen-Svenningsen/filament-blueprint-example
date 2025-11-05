@@ -13,7 +13,7 @@ class GraveInfolist
             ->components([
                 TextEntry::make('name'),
                 TextEntry::make('area.name')
-                    ->label('Area'),
+                    ->label(__('Area')),
                 TextEntry::make('created_at')
                     ->dateTime()
                     ->placeholder('-'),

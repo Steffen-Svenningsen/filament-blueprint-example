@@ -22,6 +22,11 @@ class WorkTypeResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    public static function getNavigationLabel(): string
+    {
+        return __('Work Types');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return WorkTypeForm::configure($schema);

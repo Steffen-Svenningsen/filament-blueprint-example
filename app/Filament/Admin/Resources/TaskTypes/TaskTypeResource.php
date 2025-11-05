@@ -22,6 +22,11 @@ class TaskTypeResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    public static function getNavigationLabel(): string
+    {
+        return __('Task Types');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return TaskTypeForm::configure($schema);

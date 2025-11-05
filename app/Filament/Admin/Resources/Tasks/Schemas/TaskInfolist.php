@@ -12,22 +12,22 @@ class TaskInfolist
         return $schema
             ->components([
                 TextEntry::make('taskType.name')
-                    ->label('Task type'),
+                    ->label(__('Task type')),
                 TextEntry::make('area.name')
-                    ->label('Area')
+                    ->label(__('Area'))
                     ->placeholder('-'),
                 TextEntry::make('grave.name')
-                    ->label('Grave')
+                    ->label(__('Grave'))
                     ->placeholder('-'),
                 TextEntry::make('service.name')
-                    ->label('Service'),
+                    ->label(__('Service')),
                 TextEntry::make('customer.name')
-                    ->label('Customer')
+                    ->label(__('Customer'))
                     ->placeholder('-'),
                 TextEntry::make('user.name')
-                    ->label('User'),
+                    ->label(__('User')),
                 TextEntry::make('workType.name')
-                    ->label('Work type')
+                    ->label(__('Work type'))
                     ->placeholder('-'),
                 TextEntry::make('hours')
                     ->numeric(),

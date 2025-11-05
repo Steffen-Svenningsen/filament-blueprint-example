@@ -22,6 +22,11 @@ class AreaResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    public static function getNavigationLabel(): string
+    {
+        return __('Areas');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return AreaForm::configure($schema);

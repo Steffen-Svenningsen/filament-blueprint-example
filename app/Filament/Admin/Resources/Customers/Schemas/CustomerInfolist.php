@@ -15,7 +15,7 @@ class CustomerInfolist
                 TextEntry::make('phone')
                     ->placeholder('-'),
                 TextEntry::make('email')
-                    ->label('Email address')
+                    ->label(__('Email address'))
                     ->placeholder('-'),
                 TextEntry::make('created_at')
                     ->dateTime()

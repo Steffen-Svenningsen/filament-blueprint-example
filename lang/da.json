@@ -1,0 +1,29 @@
+{
+    "__AUTH__": "========== Auth ==========",
+    "Username": "Brugernavn",
+
+
+    "__DASHBOARD__": "========== Dashboard ==========",
+
+
+    "__SIDEBAR NAV__": "========== Sidebar Nav ==========",
+    "Areas": "Områder",
+    "Graves": "Grave",
+    "Customers": "Kunder",
+    "Services": "Maskiner og ydelser",
+    "Task Types": "Opgavetyper",
+    "Tasks": "Opgaver",
+    "Work Types": "Arbejdsopgaver",
+
+
+    "__GENERAL__": "========== General ==========",
+    "Name": "Navn",
+    "Phone": "Telefon",
+    "Email address": "E-mail",
+    "Created at": "Oprettet den",
+    "Updated at": "Opdateret den",
+    "Go to App": "Gå til App",
+    "Go to Admin Panel": "Gå til Admin Panel",
+    "My Profile": "Min Profil",
+    "my-profile": "min-profil"
+}
