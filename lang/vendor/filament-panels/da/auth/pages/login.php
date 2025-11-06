@@ -69,7 +69,7 @@ return [
 
     'messages' => [
 
-        'failed' => 'Den adgangskode, du har indtastet, er forkert.',
+        'failed' => 'De angivne loginoplysninger er forkerte.',
 
     ],
 
