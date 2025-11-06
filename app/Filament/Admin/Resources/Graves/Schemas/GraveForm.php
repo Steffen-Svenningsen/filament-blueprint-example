@@ -13,8 +13,10 @@ class GraveForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label(__('Name'))
                     ->required(),
                 Select::make('area_id')
+                    ->label(__('Area'))
                     ->relationship('area', 'name')
                     ->required(),
             ]);

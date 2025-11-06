@@ -14,6 +14,7 @@
     "Task Types": "Opgavetyper",
     "Tasks": "Opgaver",
     "Work Types": "Arbejdsopgaver",
+    "Users": "Ansatte",
 
 
     "__GENERAL__": "========== General ==========",
@@ -25,5 +26,21 @@
     "Go to App": "Gå til App",
     "Go to Admin Panel": "Gå til Admin Panel",
     "My Profile": "Min Profil",
-    "my-profile": "min-profil"
+    "my-profile": "min-profil",
+
+    "__WORK RELATED__": "========== Work Related ==========",
+    "Service": "Maskine/Ydelse",
+    "Customer": "Kunde",
+    "User": "Ansat",
+    "Work Type": "Arbejdsopgave",
+    "Hours": "Tid (timer)",
+    "Break Hours": "Pause (timer)",
+    "Task Type": "Opgavetype",
+    "Area": "Område",
+    "Grave": "Grav",
+    "Comment": "Kommentar",
+    "Created At": "Oprettet den",
+    "Updated At": "Opdateret den",
+    "Customer name": "Kundenavn",
+    "Phone number": "Telefonnummer"
 }

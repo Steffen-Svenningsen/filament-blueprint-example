@@ -12,6 +12,7 @@ class ServiceForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label(__('Name'))
                     ->required(),
             ]);
     }
