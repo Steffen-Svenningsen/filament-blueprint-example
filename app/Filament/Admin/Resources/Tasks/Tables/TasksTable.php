@@ -15,31 +15,31 @@ class TasksTable
     {
         return $table
             ->columns([
-                TextColumn::make('taskType.name')
+                TextColumn::make('taskTypeWithTrashed.name')
                     ->label(__('Task Type'))
                     ->sortable()
                     ->searchable(),
-                TextColumn::make('area.name')
+                TextColumn::make('areaWithTrashed.name')
                     ->label(__('Area'))
                     ->sortable()
                     ->searchable(),
-                TextColumn::make('grave.name')
+                TextColumn::make('graveWithTrashed.name')
                     ->label(__('Grave'))
                     ->sortable()
                     ->searchable(),
-                TextColumn::make('service.name')
+                TextColumn::make('serviceWithTrashed.name')
                     ->label(__('Service'))
                     ->sortable()
                     ->searchable(),
-                TextColumn::make('customer.name')
+                TextColumn::make('customerWithTrashed.name')
                     ->label(__('Customer'))
                     ->sortable()
                     ->searchable(),
-                TextColumn::make('user.name')
+                TextColumn::make('userWithTrashed.name')
                     ->label(__('User'))
                     ->sortable()
                     ->searchable(),
-                TextColumn::make('workType.name')
+                TextColumn::make('workTypeWithTrashed.name')
                     ->label(__('Work Type'))
                     ->sortable()
                     ->searchable(),

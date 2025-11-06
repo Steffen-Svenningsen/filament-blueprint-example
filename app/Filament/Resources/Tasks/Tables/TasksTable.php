@@ -19,7 +19,7 @@ class TasksTable
                     ->label(__('Task Type'))
                     ->sortable()
                     ->searchable(),
-                TextColumn::make('area.name')
+                TextColumn::make('areaWithTrashed.name')
                     ->label(__('Area'))
                     ->sortable()
                     ->searchable(),

@@ -12,7 +12,7 @@ class TaskInfolist
         return $schema
             ->components([
                 TextEntry::make('taskType.name')
-                    ->label(__('Task type')),
+                    ->label(__('Task Type')),
                 TextEntry::make('area.name')
                     ->label(__('Area'))
                     ->placeholder('-'),
@@ -27,19 +27,24 @@ class TaskInfolist
                 TextEntry::make('user.name')
                     ->label(__('User')),
                 TextEntry::make('workType.name')
-                    ->label(__('Work type'))
+                    ->label(__('Work Type'))
                     ->placeholder('-'),
                 TextEntry::make('hours')
+                    ->label(__('Hours'))
                     ->numeric(),
                 TextEntry::make('break_hours')
+                    ->label(__('Break Hours'))
                     ->numeric(),
                 TextEntry::make('comment')
+                    ->label(__('Comment'))
                     ->placeholder('-')
                     ->columnSpanFull(),
                 TextEntry::make('created_at')
+                    ->label(__('Created At'))
                     ->dateTime()
                     ->placeholder('-'),
                 TextEntry::make('updated_at')
+                    ->label(__('Updated At'))
                     ->dateTime()
                     ->placeholder('-'),
             ]);

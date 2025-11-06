@@ -3,6 +3,7 @@
 namespace App\Filament\Admin\Resources\Tasks\Pages;
 
 use App\Filament\Admin\Resources\Tasks\TaskResource;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
 
@@ -14,6 +15,7 @@ class ViewTask extends ViewRecord
     {
         return [
             EditAction::make(),
+            DeleteAction::make(),
         ];
     }
 }

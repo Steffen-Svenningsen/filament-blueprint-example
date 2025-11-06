@@ -14,7 +14,7 @@
     "Task Types": "Opgavetyper",
     "Tasks": "Opgaver",
     "Work Types": "Arbejdsopgaver",
-    "Users": "Ansatte",
+    "Users": "Medarbejdere",
 
 
     "__GENERAL__": "========== General ==========",
@@ -31,7 +31,7 @@
     "__WORK RELATED__": "========== Work Related ==========",
     "Service": "Maskine/Ydelse",
     "Customer": "Kunde",
-    "User": "Ansat",
+    "User": "Medarbejder",
     "Work Type": "Arbejdsopgave",
     "Hours": "Tid (timer)",
     "Break Hours": "Pause (timer)",
