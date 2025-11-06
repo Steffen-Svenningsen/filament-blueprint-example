@@ -3,9 +3,9 @@
 namespace App\Filament\Admin\Resources\Tasks\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -66,9 +66,12 @@ class TasksTable
                 //
             ])
             ->recordActions([
-                ViewAction::make(),
                 EditAction::make(),
+                DeleteAction::make(),
             ])
+            ->recordUrl(function ($record) {
+                return route('filament.admin.resources.tasks.view', $record);
+            })
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),

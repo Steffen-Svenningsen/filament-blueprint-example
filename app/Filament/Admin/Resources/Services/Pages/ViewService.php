@@ -3,6 +3,7 @@
 namespace App\Filament\Admin\Resources\Services\Pages;
 
 use App\Filament\Admin\Resources\Services\ServiceResource;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
 
@@ -19,6 +20,7 @@ class ViewService extends ViewRecord
     {
         return [
             EditAction::make(),
+            DeleteAction::make(),
         ];
     }
 }
