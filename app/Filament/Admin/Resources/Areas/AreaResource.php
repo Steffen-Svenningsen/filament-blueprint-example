@@ -15,16 +15,22 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class AreaResource extends Resource
 {
     protected static ?string $model = Area::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedMapPin;
 
     public static function getNavigationLabel(): string
     {
         return __('Areas');
+    }
+
+    public static function getNavigationGroup(): string|UnitEnum|null
+    {
+        return __('Resources');
     }
 
     public static function form(Schema $schema): Schema

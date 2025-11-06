@@ -15,16 +15,27 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class TaskResource extends Resource
 {
     protected static ?string $model = Task::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedClipboardDocumentList;
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
     public static function getNavigationLabel(): string
     {
         return __('Tasks');
+    }
+
+    public static function getNavigationGroup(): string|UnitEnum|null
+    {
+        return __('Operations');
     }
 
     public static function form(Schema $schema): Schema

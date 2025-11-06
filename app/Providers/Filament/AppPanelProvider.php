@@ -58,7 +58,8 @@ class AppPanelProvider extends PanelProvider
                     ->setIcon('heroicon-o-user-circle')
                     ->setTitle(fn (): string => __('My Profile'))
                     ->slug('my-profile')
-                    ->setNavigationLabel(fn (): string => __('My Profile')),
+                    ->setNavigationLabel(fn (): string => __('My Profile'))
+                    ->setNavigationGroup(fn (): string => __('Account')),
             ])
             ->userMenuItems([
                 'profile' => Action::make('profile')
@@ -71,7 +72,11 @@ class AppPanelProvider extends PanelProvider
                     ->label(fn (): string => __('Go to Admin Panel'))
                     ->url('/admin')
                     ->icon('heroicon-o-cog')
-                    ->visible(fn (): bool => Auth::user()?->can('viewAdminPanel', Auth::user()) ?? false),
+                    ->visible(fn (): bool => Auth::user()?->can('viewAdminPanel', Auth::user()) ?? false)
+                    ->group(fn (): string => __('Account')),
+            ])
+            ->navigationGroups([
+                __('Account'),
             ])
             ->multiFactorAuthentication([
                 AppAuthentication::make(),

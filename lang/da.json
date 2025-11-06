@@ -13,8 +13,11 @@
     "Services": "Maskiner og ydelser",
     "Task Types": "Opgavetyper",
     "Tasks": "Opgaver",
-    "Work Types": "Arbejdsopgaver",
+    "Work Types": "Arbejdskategorier",
     "Users": "Medarbejdere",
+    "Account": "Konto",
+    "Resources": "Ressourcer",
+    "Operations": "Drift",
 
 
     "__GENERAL__": "========== General ==========",
@@ -32,7 +35,7 @@
     "Service": "Maskine/Ydelse",
     "Customer": "Kunde",
     "User": "Medarbejder",
-    "Work Type": "Arbejdsopgave",
+    "Work Type": "Arbejdskategori",
     "Hours": "Tid (timer)",
     "Break Hours": "Pause (timer)",
     "Task Type": "Opgavetype",
