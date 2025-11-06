@@ -23,6 +23,8 @@ class WorkTypeResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedTag;
 
+    protected static ?int $navigationSort = 5;
+
     public static function getNavigationLabel(): string
     {
         return __('Work Types');
