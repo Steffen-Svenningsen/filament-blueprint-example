@@ -11,6 +11,11 @@ class ViewCustomer extends ViewRecord
 {
     protected static string $resource = CustomerResource::class;
 
+    public function getHeading(): string
+    {
+        return $this->record->name;
+    }
+
     protected function getHeaderActions(): array
     {
         return [

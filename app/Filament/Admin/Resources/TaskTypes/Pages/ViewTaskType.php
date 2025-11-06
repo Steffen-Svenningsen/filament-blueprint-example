@@ -3,6 +3,7 @@
 namespace App\Filament\Admin\Resources\TaskTypes\Pages;
 
 use App\Filament\Admin\Resources\TaskTypes\TaskTypeResource;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
 
@@ -10,10 +11,16 @@ class ViewTaskType extends ViewRecord
 {
     protected static string $resource = TaskTypeResource::class;
 
+    public function getHeading(): string
+    {
+        return $this->record->name;
+    }
+
     protected function getHeaderActions(): array
     {
         return [
             EditAction::make(),
+            DeleteAction::make(),
         ];
     }
 }

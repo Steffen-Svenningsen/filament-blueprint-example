@@ -12,8 +12,10 @@ class UserForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label(__('Name'))
                     ->required(),
                 TextInput::make('username')
+                    ->label(__('Username'))
                     ->required()
                     ->unique(),
                 TextInput::make('email')
@@ -21,6 +23,7 @@ class UserForm
                     ->email()
                     ->unique(),
                 TextInput::make('password')
+                    ->label(__('Password'))
                     ->password()
                     ->required(),
             ]);

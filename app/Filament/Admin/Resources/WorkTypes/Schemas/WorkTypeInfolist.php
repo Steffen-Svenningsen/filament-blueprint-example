@@ -11,11 +11,14 @@ class WorkTypeInfolist
     {
         return $schema
             ->components([
-                TextEntry::make('name'),
+                TextEntry::make('name')
+                    ->label(__('Name')),
                 TextEntry::make('created_at')
+                    ->label(__('Created At'))
                     ->dateTime()
                     ->placeholder('-'),
                 TextEntry::make('updated_at')
+                    ->label(__('Updated At'))
                     ->dateTime()
                     ->placeholder('-'),
             ]);

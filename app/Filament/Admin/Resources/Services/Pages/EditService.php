@@ -11,6 +11,11 @@ class EditService extends EditRecord
 {
     protected static string $resource = ServiceResource::class;
 
+    public function getHeading(): string
+    {
+        return $this->record->name;
+    }
+
     protected function getHeaderActions(): array
     {
         return [

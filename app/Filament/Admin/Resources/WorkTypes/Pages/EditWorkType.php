@@ -11,6 +11,11 @@ class EditWorkType extends EditRecord
 {
     protected static string $resource = WorkTypeResource::class;
 
+    public function getTitle(): string
+    {
+        return $this->record->name;
+    }
+
     protected function getHeaderActions(): array
     {
         return [

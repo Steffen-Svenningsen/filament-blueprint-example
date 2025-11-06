@@ -10,6 +10,7 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationGroup;
 use Filament\Navigation\NavigationItem;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
@@ -74,9 +75,9 @@ class AdminPanelProvider extends PanelProvider
                     ->group(fn (): string => __('Account')),
             ])
             ->navigationGroups([
-                __('Operations'),
-                __('Resources'),
-                __('Account'),
+                'Operations' => NavigationGroup::make(fn () => __('Operations')),
+                'Resources' => NavigationGroup::make(fn () => __('Resources')),
+                'Account' => NavigationGroup::make(fn () => __('Account')),
             ])
             ->multiFactorAuthentication([
                 AppAuthentication::make(),
@@ -94,6 +95,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->viteTheme('resources/css/filament/admin/theme.css');
     }
 }

@@ -25,6 +25,21 @@ class WorkTypeResource extends Resource
 
     protected static ?int $navigationSort = 5;
 
+    public static function getBreadcrumb(): string
+    {
+        return __('Work Types');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('Work Type');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('Work Types');
+    }
+
     public static function getNavigationLabel(): string
     {
         return __('Work Types');

@@ -25,6 +25,21 @@ class TaskTypeResource extends Resource
 
     protected static ?int $navigationSort = 4;
 
+    public static function getBreadcrumb(): string
+    {
+        return __('Task Types');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('Task Type');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('Task Types');
+    }
+
     public static function getNavigationLabel(): string
     {
         return __('Task Types');

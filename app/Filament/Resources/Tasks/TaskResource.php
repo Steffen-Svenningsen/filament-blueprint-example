@@ -24,6 +24,21 @@ class TaskResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedClipboardDocumentList;
 
+    public static function getBreadcrumb(): string
+    {
+        return __('Tasks');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('Task');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('Tasks');
+    }
+
     public static function getNavigationLabel(): string
     {
         return __('Tasks');

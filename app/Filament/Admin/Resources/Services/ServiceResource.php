@@ -25,6 +25,21 @@ class ServiceResource extends Resource
 
     protected static ?int $navigationSort = 3;
 
+    public static function getBreadcrumb(): string
+    {
+        return __('Services');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('Service');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('Services');
+    }
+
     public static function getNavigationLabel(): string
     {
         return __('Services');

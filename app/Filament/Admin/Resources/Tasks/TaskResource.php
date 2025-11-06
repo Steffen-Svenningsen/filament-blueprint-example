@@ -40,6 +40,16 @@ class TaskResource extends Resource
         return __('Operations');
     }
 
+    public static function getBreadcrumb(): string
+    {
+        return __('Tasks');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('Worktask');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return TaskForm::configure($schema);

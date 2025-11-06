@@ -11,6 +11,11 @@ class EditTaskType extends EditRecord
 {
     protected static string $resource = TaskTypeResource::class;
 
+    public function getHeading(): string
+    {
+        return $this->record->name;
+    }
+
     protected function getHeaderActions(): array
     {
         return [

@@ -1,3 +1,4 @@
+@import '../shared/theme.css';
 @import '../../../../vendor/filament/filament/resources/css/theme.css';
 
 @source '../../../../app/Filament/**/*';

@@ -1,0 +1,9 @@
+/* Shared theme styles for Filament admin panel and user app panel */
+
+.fi-sidebar-nav .fi-sidebar-nav-groups {
+    @apply h-full;
+
+    li:last-child {
+        @apply mt-auto;
+    }
+}

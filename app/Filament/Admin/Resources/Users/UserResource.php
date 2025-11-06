@@ -25,6 +25,16 @@ class UserResource extends Resource
 
     protected static ?int $navigationSort = 2;
 
+    public static function getBreadcrumb(): string
+    {
+        return __('Employees');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('Employee');
+    }
+
     public static function getNavigationBadge(): ?string
     {
         return static::getModel()::count();
@@ -32,7 +42,7 @@ class UserResource extends Resource
 
     public static function getNavigationLabel(): string
     {
-        return __('Users');
+        return __('Employees');
     }
 
     public static function getNavigationGroup(): string|UnitEnum|null

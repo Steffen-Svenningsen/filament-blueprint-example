@@ -25,6 +25,21 @@ class GraveResource extends Resource
 
     protected static ?int $navigationSort = 2;
 
+    public static function getBreadcrumb(): string
+    {
+        return __('Graves');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('Grave');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('Graves');
+    }
+
     public static function getNavigationLabel(): string
     {
         return __('Graves');

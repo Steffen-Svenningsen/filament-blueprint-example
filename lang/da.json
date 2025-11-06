@@ -1,6 +1,7 @@
 {
     "__AUTH__": "========== Auth ==========",
     "Username": "Brugernavn",
+    "Password": "Adgangskode",
 
 
     "__DASHBOARD__": "========== Dashboard ==========",
@@ -10,7 +11,7 @@
     "Areas": "Områder",
     "Graves": "Grave",
     "Customers": "Kunder",
-    "Services": "Maskiner og ydelser",
+    "Services": "Maskiner & ydelser",
     "Task Types": "Opgavetyper",
     "Tasks": "Opgaver",
     "Work Types": "Arbejdskategorier",
@@ -45,5 +46,10 @@
     "Created At": "Oprettet den",
     "Updated At": "Opdateret den",
     "Customer name": "Kundenavn",
-    "Phone number": "Telefonnummer"
+    "Phone number": "Telefonnummer",
+    "Worktask": "Arbejdsopgave",
+    "Task": "Opgave",
+    "Employee": "Medarbejder",
+    "Employees": "Medarbejdere",
+    "Task Details": "Opgavedetaljer"
 }

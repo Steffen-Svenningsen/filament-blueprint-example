@@ -11,6 +11,11 @@ class ViewArea extends ViewRecord
 {
     protected static string $resource = AreaResource::class;
 
+    public function getHeading(): string
+    {
+        return $this->record->name;
+    }
+
     protected function getHeaderActions(): array
     {
         return [

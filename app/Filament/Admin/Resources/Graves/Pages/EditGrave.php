@@ -11,6 +11,11 @@ class EditGrave extends EditRecord
 {
     protected static string $resource = GraveResource::class;
 
+    public function getHeading(): string
+    {
+        return $this->record->name;
+    }
+
     protected function getHeaderActions(): array
     {
         return [

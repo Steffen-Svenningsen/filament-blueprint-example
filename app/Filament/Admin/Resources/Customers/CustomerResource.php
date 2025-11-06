@@ -25,6 +25,21 @@ class CustomerResource extends Resource
 
     protected static ?int $navigationSort = 3;
 
+    public static function getBreadcrumb(): string
+    {
+        return __('Customers');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('Customer');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('Customers');
+    }
+
     public static function getNavigationBadge(): ?string
     {
         return static::getModel()::count();

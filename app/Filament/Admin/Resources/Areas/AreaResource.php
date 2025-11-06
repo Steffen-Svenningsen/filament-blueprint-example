@@ -25,6 +25,21 @@ class AreaResource extends Resource
 
     protected static ?int $navigationSort = 1;
 
+    public static function getBreadcrumb(): string
+    {
+        return __('Areas');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('Area');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('Areas');
+    }
+
     public static function getNavigationLabel(): string
     {
         return __('Areas');

@@ -10,6 +10,11 @@ class ListTasks extends ListRecords
 {
     protected static string $resource = TaskResource::class;
 
+    public function getHeading(): string
+    {
+        return __('Tasks');
+    }
+
     protected function getHeaderActions(): array
     {
         return [
