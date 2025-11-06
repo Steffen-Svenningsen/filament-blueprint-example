@@ -43,6 +43,30 @@ return [
 
     ],
 
+    'multi_factor' => [
+
+        'heading' => 'Bekræft din identitet',
+
+        'subheading' => 'For at fortsætte med at logge ind, skal du bekræfte din identitet.',
+
+        'form' => [
+
+            'provider' => [
+                'label' => 'Hvordan vil du gerne bekræfte?',
+            ],
+
+            'actions' => [
+
+                'authenticate' => [
+                    'label' => 'Bekræft login',
+                ],
+
+            ],
+
+        ],
+
+    ],
+
     'messages' => [
 
         'failed' => 'Den adgangskode, du har indtastet, er forkert.',
