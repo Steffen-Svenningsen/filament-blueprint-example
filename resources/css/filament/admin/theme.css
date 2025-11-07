@@ -4,3 +4,7 @@
 @source '../../../../app/Filament/Admin/**/*';
 @source '../../../../resources/views/filament/admin/**/*';
 @source '../../../../vendor/bezhansalleh/filament-language-switch/resources/views/**/*.blade.php';
+
+a.fi-in-entry-content {
+    @apply w-fit md:hover:underline;
+}
