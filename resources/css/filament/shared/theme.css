@@ -1,9 +1,20 @@
 /* Shared theme styles for Filament admin panel and user app panel */
 
+/* General styles */
+html.fi {
+    scrollbar-gutter: auto;
+}
+
+/* Sidebar navigation styles */
 .fi-sidebar-nav .fi-sidebar-nav-groups {
     @apply h-full;
 
     li:last-child {
         @apply mt-auto;
     }
+}
+
+/* Multifactor authentication styles */
+#multiFactorChallengeForm\.app .fi-fo-field {
+    place-items: center;
 }
