@@ -26,12 +26,12 @@ class CustomersTable
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->label(__('Created at'))
-                    ->dateTime()
+                    ->dateTime('d M Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
                     ->label(__('Updated at'))
-                    ->dateTime()
+                    ->dateTime('d M Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])

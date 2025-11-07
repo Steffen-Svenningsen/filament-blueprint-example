@@ -21,11 +21,11 @@ class CustomerInfolist
                     ->placeholder('-'),
                 TextEntry::make('created_at')
                     ->label(__('Created at'))
-                    ->dateTime()
+                    ->dateTime('d M Y H:i')
                     ->placeholder('-'),
                 TextEntry::make('updated_at')
                     ->label(__('Updated at'))
-                    ->dateTime()
+                    ->dateTime('d M Y H:i')
                     ->placeholder('-'),
             ]);
     }

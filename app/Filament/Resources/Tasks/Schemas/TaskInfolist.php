@@ -41,11 +41,11 @@ class TaskInfolist
                     ->columnSpanFull(),
                 TextEntry::make('created_at')
                     ->label(__('Created At'))
-                    ->dateTime()
+                    ->dateTime('d M Y H:i')
                     ->placeholder('-'),
                 TextEntry::make('updated_at')
                     ->label(__('Updated At'))
-                    ->dateTime()
+                    ->dateTime('d M Y H:i')
                     ->placeholder('-'),
             ]);
     }

@@ -36,12 +36,14 @@ class TaskForm
                 TextInput::make('hours')
                     ->label(__('Hours'))
                     ->required()
-                    ->numeric(),
+                    ->numeric()
+                    ->maxValue(24.0),
                 TextInput::make('break_hours')
                     ->label(__('Break Hours'))
                     ->required()
                     ->numeric()
-                    ->default(0.0),
+                    ->default(0.0)
+                    ->maxValue(4.0),
                 Textarea::make('comment')
                     ->label(__('Comment'))
                     ->columnSpanFull(),

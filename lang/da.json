@@ -31,6 +31,7 @@
     "Go to Admin Panel": "Gå til Admin Panel",
     "My Profile": "Min Profil",
     "my-profile": "min-profil",
+    "Date": "Dato",
 
     "__WORK RELATED__": "========== Work Related ==========",
     "Service": "Maskine/Ydelse",
@@ -51,5 +52,6 @@
     "Task": "Opgave",
     "Employee": "Medarbejder",
     "Employees": "Medarbejdere",
-    "Task Details": "Opgavedetaljer"
+    "Task Details": "Opgavedetaljer",
+    "All Tasks": "Alle Opgaver"
 }
