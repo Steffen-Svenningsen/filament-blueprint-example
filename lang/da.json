@@ -53,7 +53,16 @@
     "Time": "Tid",
     "Date and Time": "Dato og tid",
     "Task Duration (Hours)": "Opgavens varighed (timer)",
+
+    "__VALIDATIONS__": "========== Validations ==========",
     "Break hours must be less than total hours worked": "Pause timer skal være mindre end de samlede arbejdstimer",
+    "The task type field is required": "Feltet for opgavetype er påkrævet",
+    "The area field is required": "Feltet for område er påkrævet",
+    "The grave field is required": "Feltet for grav er påkrævet",
+    "The service field is required": "Feltet for maskine/ydelse er påkrævet",
+    "The customer field is required": "Feltet for kunde er påkrævet",
+    "The hours field is required": "Feltet for timer er påkrævet",
+    "The break hours field is required": "Feltet for pause er påkrævet",
 
     "__WORK RELATED__": "========== Work Related ==========",
     "Service": "Maskine/Ydelse",
