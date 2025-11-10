@@ -21,6 +21,8 @@ class WorkTypeResource extends Resource
 {
     protected static ?string $model = WorkType::class;
 
+    protected static ?string $recordTitleAttribute = 'name';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedTag;
 
     protected static ?int $navigationSort = 5;

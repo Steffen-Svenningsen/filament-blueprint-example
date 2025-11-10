@@ -21,6 +21,8 @@ class GraveResource extends Resource
 {
     protected static ?string $model = Grave::class;
 
+    protected static ?string $recordTitleAttribute = 'name';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedMap;
 
     protected static ?int $navigationSort = 2;

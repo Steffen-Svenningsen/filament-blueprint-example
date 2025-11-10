@@ -21,6 +21,8 @@ class CustomerResource extends Resource
 {
     protected static ?string $model = Customer::class;
 
+    protected static ?string $recordTitleAttribute = 'name';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBriefcase;
 
     protected static ?int $navigationSort = 3;

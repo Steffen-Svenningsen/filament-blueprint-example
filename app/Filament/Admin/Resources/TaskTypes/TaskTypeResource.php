@@ -21,6 +21,8 @@ class TaskTypeResource extends Resource
 {
     protected static ?string $model = TaskType::class;
 
+    protected static ?string $recordTitleAttribute = 'name';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedClipboard;
 
     protected static ?int $navigationSort = 4;

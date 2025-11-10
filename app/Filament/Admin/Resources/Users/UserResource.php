@@ -21,6 +21,8 @@ class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
+    protected static ?string $recordTitleAttribute = 'name';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUserGroup;
 
     protected static ?int $navigationSort = 2;
@@ -33,6 +35,11 @@ class UserResource extends Resource
     public static function getModelLabel(): string
     {
         return __('Employee');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('Employees');
     }
 
     public static function getNavigationBadge(): ?string
