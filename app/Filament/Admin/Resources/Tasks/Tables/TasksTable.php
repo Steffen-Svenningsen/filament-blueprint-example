@@ -12,6 +12,8 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Malzariey\FilamentDaterangepickerFilter\Enums\DropDirection;
+use Malzariey\FilamentDaterangepickerFilter\Enums\OpenDirection;
 use Malzariey\FilamentDaterangepickerFilter\Filters\DateRangeFilter;
 use pxlrbt\FilamentExcel\Actions\ExportAction;
 use pxlrbt\FilamentExcel\Actions\ExportBulkAction;
@@ -90,6 +92,7 @@ class TasksTable
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->deferColumnManager(false)
             ->filters([
                 SelectFilter::make('user_id')
                     ->label(__('Employee'))
@@ -112,7 +115,10 @@ class TasksTable
                     ->relationship('customer', 'name')
                     ->multiple(),
                 DateRangeFilter::make('created_at')
-                    ->label(__('Date')),
+                    ->label(__('Date'))
+                    ->drops(DropDirection::UP)
+                    ->opens(OpenDirection::CENTER)
+                    ->showWeekNumbers(),
 
             ], layout: FiltersLayout::Modal)
             ->filtersFormWidth(Width::FourExtraLarge)
@@ -135,9 +141,11 @@ class TasksTable
             ])
             ->headerActions([
                 ExportAction::make()
+                    ->label(__('Export to Excel'))
                     ->exports([
                         ExcelExport::make()
                             ->fromTable()
+                            ->askForFilename(__('tasks').'-'.now()->format('Y-m-d'))
                             ->withColumns([
                                 Column::make('actual_time')
                                     ->heading(__('Task Duration (Hours)'))
@@ -152,9 +160,11 @@ class TasksTable
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                     ExportBulkAction::make()
+                        ->label(__('Export to Excel'))
                         ->exports([
                             ExcelExport::make()
                                 ->fromTable()
+                                ->askForFilename(__('tasks').'-'.now()->format('Y-m-d'), __('Filename'))
                                 ->withColumns([
                                     Column::make('actual_time')
                                         ->heading(__('Task Duration (Hours)'))

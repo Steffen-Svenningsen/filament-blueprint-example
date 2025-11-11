@@ -8,6 +8,9 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use pxlrbt\FilamentExcel\Actions\ExportAction;
+use pxlrbt\FilamentExcel\Actions\ExportBulkAction;
+use pxlrbt\FilamentExcel\Exports\ExcelExport;
 
 class CustomersTable
 {
@@ -20,10 +23,12 @@ class CustomersTable
                     ->searchable(),
                 TextColumn::make('phone')
                     ->label(__('Phone'))
-                    ->searchable(),
+                    ->searchable()
+                    ->toggleable(),
                 TextColumn::make('email')
                     ->label(__('Email address'))
-                    ->searchable(),
+                    ->searchable()
+                    ->toggleable(),
                 TextColumn::make('created_at')
                     ->label(__('Created at'))
                     ->dateTime('d M Y H:i')
@@ -35,6 +40,7 @@ class CustomersTable
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->deferColumnManager(false)
             ->filters([
                 //
             ])
@@ -42,12 +48,28 @@ class CustomersTable
                 EditAction::make(),
                 DeleteAction::make(),
             ])
+            ->headerActions([
+                ExportAction::make()
+                    ->label(__('Export to Excel'))
+                    ->exports([
+                        ExcelExport::make()
+                            ->fromTable()
+                            ->askForFilename(__('customers').'-'.now()->format('Y-m-d')),
+                    ]),
+            ])
             ->recordUrl(function ($record) {
                 return route('filament.admin.resources.customers.view', $record);
             })
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
+                    ExportBulkAction::make()
+                        ->label(__('Export to Excel'))
+                        ->exports([
+                            ExcelExport::make()
+                                ->fromTable()
+                                ->askForFilename(__('customers').'-'.now()->format('Y-m-d')),
+                        ]),
                 ]),
             ]);
     }

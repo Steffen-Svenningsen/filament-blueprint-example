@@ -82,5 +82,17 @@
     "Worktask": "Arbejdsopgave",
     "Task": "Opgave",
     "Employee": "Medarbejder",
-    "Employees": "Medarbejdere"
+    "Employees": "Medarbejdere",
+
+    "__EXPORT__": "========== Export ==========",
+    "Export to Excel": "Eksportér til Excel",
+    "Filename": "Filnavn",
+    "tasks": "arbejdsopgaver",
+    "users": "medarbejdere",
+    "customers": "kunder",
+    "areas": "områder",
+    "graves": "grave",
+    "services": "maskiner_ydelser",
+    "task_types": "opgavetyper",
+    "work_types": "arbejdskategorier"
 }

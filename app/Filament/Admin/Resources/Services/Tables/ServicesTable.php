@@ -8,6 +8,9 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use pxlrbt\FilamentExcel\Actions\ExportAction;
+use pxlrbt\FilamentExcel\Actions\ExportBulkAction;
+use pxlrbt\FilamentExcel\Exports\ExcelExport;
 
 class ServicesTable
 {
@@ -30,6 +33,7 @@ class ServicesTable
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->deferColumnManager(false)
             ->filters([
                 //
             ])
@@ -37,12 +41,28 @@ class ServicesTable
                 EditAction::make(),
                 DeleteAction::make(),
             ])
+            ->headerActions([
+                ExportAction::make()
+                    ->label(__('Export to Excel'))
+                    ->exports([
+                        ExcelExport::make()
+                            ->fromTable()
+                            ->askForFilename(__('services').'-'.now()->format('Y-m-d')),
+                    ]),
+            ])
             ->recordUrl(function ($record) {
                 return route('filament.admin.resources.services.view', $record);
             })
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
+                    ExportBulkAction::make()
+                        ->label(__('Export to Excel'))
+                        ->exports([
+                            ExcelExport::make()
+                                ->fromTable()
+                                ->askForFilename(__('services').'-'.now()->format('Y-m-d')),
+                        ]),
                 ]),
             ]);
     }

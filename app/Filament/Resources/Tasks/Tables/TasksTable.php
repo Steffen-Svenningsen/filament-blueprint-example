@@ -76,6 +76,7 @@ class TasksTable
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->deferColumnManager(false)
             ->filters([
                 SelectFilter::make('task_type_id')
                     ->label(__('Task Type'))

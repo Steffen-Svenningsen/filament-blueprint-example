@@ -10,6 +10,9 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use pxlrbt\FilamentExcel\Actions\ExportAction;
+use pxlrbt\FilamentExcel\Actions\ExportBulkAction;
+use pxlrbt\FilamentExcel\Exports\ExcelExport;
 
 class GravesTable
 {
@@ -24,7 +27,8 @@ class GravesTable
                 TextColumn::make('area.name')
                     ->label(__('Area'))
                     ->sortable()
-                    ->searchable(),
+                    ->searchable()
+                    ->toggleable(),
                 TextColumn::make('created_at')
                     ->label(__('Created At'))
                     ->dateTime('d M Y H:i')
@@ -36,6 +40,7 @@ class GravesTable
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->deferColumnManager(false)
             ->filters([
                 SelectFilter::make('area_id')
                     ->label(__('Area'))
@@ -46,12 +51,28 @@ class GravesTable
                 EditAction::make(),
                 DeleteAction::make(),
             ])
+            ->headerActions([
+                ExportAction::make()
+                    ->label(__('Export to Excel'))
+                    ->exports([
+                        ExcelExport::make()
+                            ->fromTable()
+                            ->askForFilename(__('graves').'-'.now()->format('Y-m-d')),
+                    ]),
+            ])
             ->recordUrl(function ($record) {
                 return route('filament.admin.resources.graves.view', $record);
             })
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
+                    ExportBulkAction::make()
+                        ->label(__('Export to Excel'))
+                        ->exports([
+                            ExcelExport::make()
+                                ->fromTable()
+                                ->askForFilename(__('graves').'-'.now()->format('Y-m-d')),
+                        ]),
                 ]),
             ]);
     }
