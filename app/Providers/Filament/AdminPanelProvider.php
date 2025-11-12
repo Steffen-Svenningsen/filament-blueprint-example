@@ -78,6 +78,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->navigationGroups([
                 'Operations' => NavigationGroup::make(fn () => __('Operations')),
+                'Invoice' => NavigationGroup::make(fn () => __('Invoice')),
                 'Resources' => NavigationGroup::make(fn () => __('Resources')),
                 'Account' => NavigationGroup::make(fn () => __('Account')),
             ])

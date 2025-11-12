@@ -71,6 +71,10 @@ class TaskForm
                             ->label(__('Phone')),
                         TextInput::make('email')
                             ->label(__('Email')),
+                        TextInput::make('address')
+                            ->label(__('Address')),
+                        TextInput::make('city')
+                            ->label(__('City')),
                     ])),
 
                 Select::make('user_id')

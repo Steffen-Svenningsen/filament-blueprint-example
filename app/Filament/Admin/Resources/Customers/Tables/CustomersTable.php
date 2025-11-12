@@ -29,6 +29,14 @@ class CustomersTable
                     ->label(__('Email address'))
                     ->searchable()
                     ->toggleable(),
+                TextColumn::make('address')
+                    ->label(__('Address'))
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('city')
+                    ->label(__('City'))
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('created_at')
                     ->label(__('Created at'))
                     ->dateTime('d M Y H:i')

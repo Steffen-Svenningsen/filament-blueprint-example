@@ -26,6 +26,12 @@ class CustomerInfolist
                                 TextEntry::make('email')
                                     ->label(__('Email address'))
                                     ->placeholder('-'),
+                                TextEntry::make('address')
+                                    ->label(__('Address'))
+                                    ->placeholder('-'),
+                                TextEntry::make('city')
+                                    ->label(__('City'))
+                                    ->placeholder('-'),
                                 TextEntry::make('created_at')
                                     ->label(__('Created at'))
                                     ->dateTime('d M Y H:i')

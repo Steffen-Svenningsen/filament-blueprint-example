@@ -20,6 +20,10 @@ class CustomerForm
                 TextInput::make('email')
                     ->label(__('Email address'))
                     ->email(),
+                TextInput::make('address')
+                    ->label(__('Address')),
+                TextInput::make('city')
+                    ->label(__('City')),
             ]);
     }
 }

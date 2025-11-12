@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333333;
+    background-color: #f5f5f5;
+    padding: 3.5rem 3rem;
+}
+
+/* Header */
+.header-table {
+    width: 100%;
+    margin-bottom: 40px;
+    border-collapse: collapse;
+}
+
+.header-left {
+    width: 70%;
+    vertical-align: top;
+}
+
+.header-right {
+    width: 30%;
+    text-align: right;
+    vertical-align: top;
+}
+
+.header-table h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.company-name {
+    font-size: 18px;
+    color: #666666;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    background-color: #000000;
+    border-radius: 8px;
+    display: inline-block;
+    color: #ffffff;
+    text-align: center;
+    line-height: 60px;
+    font-weight: bold;
+}
+
+/* Info Section */
+.info-table {
+    width: 100%;
+    margin-bottom: 40px;
+    border-collapse: collapse;
+}
+
+.info-left {
+    width: 50%;
+    vertical-align: top;
+    padding-right: 20px;
+}
+
+.info-right {
+    width: 50%;
+    vertical-align: top;
+    text-align: right;
+    padding-left: 20px;
+}
+
+.info-table p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.info-table strong {
+    font-weight: bold;
+}
+
+/* Invoice Title */
+.invoice-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+/* Services Table */
+.services-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.services-table thead {
+    background-color: #f8f8f8;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.services-table th {
+    padding: 12px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 14px;
+    color: #666666;
+}
+
+.services-table th:first-of-type {
+    text-align: left;
+}
+
+.services-table td {
+    padding: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+}
+
+.desc-col {
+    width: 40%;
+}
+
+.qty-col {
+    width: 15%;
+    text-align: right;
+}
+
+.price-col {
+    width: 20%;
+    text-align: right;
+}
+
+.total-col {
+    width: 25%;
+    text-align: right;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Totals */
+.totals-table {
+    width: 100%;
+    margin-bottom: 40px;
+    border-collapse: collapse;
+}
+
+.totals-label {
+    width: 50%;
+}
+
+.totals-content {
+    width: 50%;
+    vertical-align: top;
+}
+
+.totals-inner {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.totals-inner td {
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.totals-inner .total-row td {
+    padding-top: 15px;
+    border-top: 2px solid #e0e0e0;
+    font-size: 18px;
+}
+
+/* Footer */
+.footer-section {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.footer-left {
+    width: 50%;
+    vertical-align: top;
+    padding-right: 20px;
+}
+
+.footer-right {
+    width: 50%;
+    vertical-align: top;
+    text-align: right;
+    padding-left: 20px;
+}
+
+.footer-table p {
+    margin-bottom: 6px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #666666;
+}
+
+.footer-table strong {
+    font-weight: bold;
+    color: #333333;
+}
