@@ -56,8 +56,6 @@ class InvoicesTable
                 //
             ])
             ->recordActions([
-                EditAction::make(),
-                DeleteAction::make(),
                 Action::make('download')
                     ->label(__('Download PDF'))
                     ->icon(Heroicon::OutlinedArrowDownTray)
@@ -69,6 +67,8 @@ class InvoicesTable
                             "Faktura_{$record->invoice_number}.pdf"
                         );
                     }),
+                EditAction::make(),
+                DeleteAction::make(),
             ])
             ->recordUrl(function ($record) {
                 return route('filament.admin.resources.invoices.view', $record);
