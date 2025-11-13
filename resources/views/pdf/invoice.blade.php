@@ -13,7 +13,7 @@
             <tr>
                 <td class="header-left">
                     <h1>{{ __('Invoice') }}</h1>
-                    <p class="company-name">SK Transport</p>
+                    <p class="company-name">{{ $settings->company_name }}</p>
                 </td>
                 <td class="header-right">
                     <div class="logo">Logo</div>
@@ -26,20 +26,17 @@
             <tr>
                 <td class="info-left">
                     <p><strong>{{ __('Sender') }}:</strong></p>
-                    <p>SK Transport</p>
-                    <p><strong>CVR:</strong> 27761518</p>
-                    <p><strong>{{ __('Email address') }}:</strong> sktransp@hotmail.com</p>
-                    <p><strong>{{ __('Phone') }}:</strong> 24614037</p>
-                    <p><strong>{{ __('Address') }}:</strong> Håndværkervej 6, Sejerslev, 7900 Nykøbing Mors</p>
+                    <p>{{ $settings->company_name }}</p>
+                    <p><strong>CVR:</strong> {{ $settings->cvr_number }}</p>
+                    <p><strong>{{ __('Email address') }}:</strong> {{ $settings->email }}</p>
+                    <p><strong>{{ __('Phone') }}:</strong> {{ $settings->phone }}</p>
+                    <p><strong>{{ __('Address') }}:</strong> {{ $settings->address }}, {{ $settings->zip }} {{ $settings->city }}</p>
                 </td>
                 <td class="info-right">
                     <p><strong>{{ __('Recipient') }}:</strong></p>
                     <p>{{ $invoice->customer->name }}</p>
-                    @if ($invoice->customer->address)
-                        <p>{{ $invoice->customer->address }}</p>
-                    @endif
-                    @if ($invoice->customer->city)
-                        <p>{{ $invoice->customer->city }}</p>
+                    @if ($invoice->customer->address && $invoice->customer->city)
+                        <p>{{ $invoice->customer->address }}, {{ $invoice->customer->city }}</p>
                     @endif
                     <p><strong>{{ __('Invoice number') }}:</strong> {{ $invoice->invoice_number }}</p>
                     <p><strong>{{ __('Date') }}:</strong> {{ $invoice->issue_date->format('d/m/Y') }}</p>
@@ -110,9 +107,8 @@
                 <tr>
                     <td class="footer-left">
                         <p><strong>{{ __('Bank Information for Payment') }}:</strong></p>
-                        <p>Bank: Frøslev-Mollerup Sparekasse</p>
-                        <p>Reg.nr. 9133 – {{ __('Account Number') }}. 2050342</p>
-                        <p>{{ __('Account Holder') }}: SK Transport ApS</p>
+                        <p>Bank: {{ $settings->bank_name }}</p>
+                        <p>Reg.nr. {{ $settings->reg_number }} – {{ __('Account Number') }}. {{ $settings->account_number }}</p>
                     </td>
                     <td class="footer-right">
                         <p>{{ __('Payment due within 14 days net') }}.</p>
