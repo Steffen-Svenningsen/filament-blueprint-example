@@ -47,28 +47,18 @@ class InvoiceSettings extends Page implements HasForms
         return __('These settings will automatically be used when generating invoices.');
     }
 
+    protected function getFormModel(): ?InvoiceSetting
+    {
+        return InvoiceSetting::first();
+    }
+
     public ?array $data = [];
 
     public function mount(): void
     {
         $setting = InvoiceSetting::first();
 
-        if (! $setting) {
-            $setting = InvoiceSetting::create([
-                'company_name' => '',
-                'address' => '',
-                'zip' => '',
-                'city' => '',
-                'cvr_number' => '',
-                'email' => '',
-                'phone' => '',
-                'bank_name' => '',
-                'reg_number' => '',
-                'account_number' => '',
-            ]);
-        }
-
-        $this->form->fill($setting->toArray());
+        $this->data = $setting?->toArray() ?? [];
     }
 
     public function form(Schema $form): Schema
@@ -160,8 +150,14 @@ class InvoiceSettings extends Page implements HasForms
     public function save(): void
     {
         $data = $this->form->getState();
-        $setting = InvoiceSetting::first();
-        $setting->fill($data)->save();
+
+        $settings = InvoiceSetting::first();
+
+        if (! $settings) {
+            $settings = InvoiceSetting::create($data);
+        } else {
+            $settings->update($data);
+        }
 
         Notification::make()
             ->success()
