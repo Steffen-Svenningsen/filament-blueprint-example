@@ -3,7 +3,6 @@
 namespace App\Filament\Admin\Resources\Invoices\Tables;
 
 use App\Models\Invoice;
-use Barryvdh\DomPDF\Facade\Pdf;
 use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
@@ -69,10 +68,10 @@ class InvoicesTable
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
-                    Action::make('download')
-                        ->label(__('Download PDFs'))
-                        ->icon(Heroicon::OutlinedArrowDownTray),
-                    // TODO: Implement bulk PDF download
+                    // TODO: Implement download bulk action
+                    // Action::make('download')
+                    //     ->label(__('Download PDFs'))
+                    //     ->icon(Heroicon::OutlinedArrowDownTray),
                 ]),
             ]);
     }

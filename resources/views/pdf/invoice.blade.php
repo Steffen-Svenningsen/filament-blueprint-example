@@ -16,7 +16,11 @@
                     <p class="company-name">{{ $settings->company_name }}</p>
                 </td>
                 <td class="header-right">
-                    <div class="logo">Logo</div>
+                    @if($settings->logo_path)
+                        <div class="logo">
+                            <img src="{{ storage_path('app/public/' . $settings->logo_path) }}" alt="{{ $settings->company_name }} Logo">
+                        </div>
+                    @endif
                 </td>
             </tr>
         </table>

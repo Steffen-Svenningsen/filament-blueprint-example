@@ -166,5 +166,6 @@
     "Account Number is required": "Kontonr er påkrævet",
     "Invoice settings are not configured.": "Fakturaindstillinger er ikke konfigureret.",
     "Please configure the invoice settings before downloading invoices.": "Konfigurer venligst fakturaindstillingerne, før du downloader fakturaer.",
-    "Invoice settings saved successfully.": "Fakturaindstillinger gemt succesfuldt."
+    "Invoice settings saved successfully.": "Fakturaindstillinger gemt succesfuldt.",
+    "Company Logo": "Firmalogo"
 }

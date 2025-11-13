@@ -17,5 +17,6 @@ class InvoiceSetting extends Model
         'bank_name',
         'reg_number',
         'account_number',
+        'logo_path',
     ];
 }

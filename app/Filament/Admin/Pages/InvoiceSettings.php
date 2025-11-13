@@ -4,6 +4,7 @@ namespace App\Filament\Admin\Pages;
 
 use App\Models\InvoiceSetting;
 use BackedEnum;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
@@ -102,6 +103,15 @@ class InvoiceSettings extends Page implements HasForms
                             ->validationMessages([
                                 'required' => __('CVR Number is required'),
                             ]),
+
+                        FileUpload::make('logo_path')
+                            ->label(__('Company Logo'))
+                            ->disk('public')
+                            ->image()
+                            ->directory('logos')
+                            ->maxSize(1024)
+                            ->nullable()
+                            ->multiple(false),
                     ]),
 
                 Section::make(__('Contact Information'))
