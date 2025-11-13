@@ -14,6 +14,7 @@ use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Support\Facades\Storage;
 use UnitEnum;
 
 class InvoiceSettings extends Page implements HasForms
@@ -109,9 +110,16 @@ class InvoiceSettings extends Page implements HasForms
                             ->disk('public')
                             ->image()
                             ->directory('logos')
+                            ->visibility('public')
                             ->maxSize(1024)
                             ->nullable()
-                            ->multiple(false),
+                            ->multiple(false)
+                            ->dehydrateStateUsing(fn ($state) => $state) // store as string
+                            ->deleteUploadedFileUsing(function ($file) {
+                                if ($file && Storage::disk('public')->exists($file)) {
+                                    Storage::disk('public')->delete($file);
+                                }
+                            }),
                     ]),
 
                 Section::make(__('Contact Information'))

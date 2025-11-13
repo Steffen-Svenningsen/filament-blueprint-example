@@ -15,13 +15,13 @@
                     <h1>{{ __('Invoice') }}</h1>
                     <p class="company-name">{{ $settings->company_name }}</p>
                 </td>
-                <td class="header-right">
-                    @if($settings->logo_path)
+                @if($settings->logo_path)
+                    <td class="header-right">
                         <div class="logo">
-                            <img src="{{ storage_path('app/public/' . $settings->logo_path) }}" alt="{{ $settings->company_name }} Logo">
+                            <img src="{{ storage_path('app/public/' . $settings->logo_path) }}">
                         </div>
-                    @endif
-                </td>
+                    </td>
+                @endif
             </tr>
         </table>
 

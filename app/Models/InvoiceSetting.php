@@ -19,4 +19,9 @@ class InvoiceSetting extends Model
         'account_number',
         'logo_path',
     ];
+
+    public function getLogoUrlAttribute(): ?string
+    {
+        return $this->logo_path ? asset('storage/'.$this->logo_path) : null;
+    }
 }
