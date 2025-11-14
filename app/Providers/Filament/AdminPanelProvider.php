@@ -39,6 +39,8 @@ class AdminPanelProvider extends PanelProvider
             ->globalSearchKeyBindings(['command+k', 'ctrl+k'])
             ->globalSearchFieldKeyBindingSuffix()
             ->spa()
+            ->brandLogo(asset('SK_Transport_Logo.png'))
+            ->brandLogoHeight('2.5rem')
             ->defaultThemeMode(ThemeMode::Light)
             ->colors([
                 'primary' => Color::Amber,

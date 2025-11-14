@@ -37,6 +37,8 @@ class AppPanelProvider extends PanelProvider
             ->id('app')
             ->path('')
             ->spa()
+            ->brandLogo(asset('SK_Transport_Logo.png'))
+            ->brandLogoHeight('2.5rem')
             ->defaultThemeMode(ThemeMode::Light)
             ->login(Login::class)
             ->colors([
