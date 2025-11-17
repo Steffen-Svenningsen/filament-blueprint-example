@@ -10,7 +10,12 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Enums\FiltersLayout;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Malzariey\FilamentDaterangepickerFilter\Enums\DropDirection;
+use Malzariey\FilamentDaterangepickerFilter\Enums\OpenDirection;
+use Malzariey\FilamentDaterangepickerFilter\Filters\DateRangeFilter;
 
 class InvoicesTable
 {
@@ -52,8 +57,16 @@ class InvoicesTable
             ])
             ->deferColumnManager(false)
             ->filters([
-                //
-            ])
+                SelectFilter::make('customer_id')
+                    ->label(__('Customer'))
+                    ->relationship('customer', 'name')
+                    ->multiple(),
+                DateRangeFilter::make('created_at')
+                    ->label(__('Date'))
+                    ->drops(DropDirection::AUTO)
+                    ->opens(OpenDirection::CENTER)
+                    ->showWeekNumbers(),
+            ], layout: FiltersLayout::Modal)
             ->recordActions([
                 Action::make('download')
                     ->label(__('Download PDF'))
