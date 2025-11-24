@@ -51,6 +51,9 @@ class LatestTasks extends TableWidget
             ->recordActions([
                 //
             ])
+            ->recordUrl(function ($record) {
+                return route('filament.admin.resources.tasks.view', $record);
+            })
             ->toolbarActions([
                 BulkActionGroup::make([
                     //
