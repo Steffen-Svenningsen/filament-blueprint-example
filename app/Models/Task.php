@@ -50,6 +50,14 @@ class Task extends Model
         ];
     }
 
+    public static function getTotalTasksThisWeek(): int
+    {
+        $startOfWeek = now()->startOfWeek();
+        $endOfWeek = now()->endOfWeek();
+
+        return self::whereBetween('created_at', [$startOfWeek, $endOfWeek])->count();
+    }
+
     public function getActualTimeAttribute(): float
     {
         return $this->hours - $this->break_hours;

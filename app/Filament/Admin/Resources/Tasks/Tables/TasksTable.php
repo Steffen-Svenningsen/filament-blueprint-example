@@ -52,7 +52,7 @@ class TasksTable
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('userWithTrashed.name')
-                    ->label(__('User'))
+                    ->label(__('Employee'))
                     ->sortable()
                     ->searchable()
                     ->toggleable(),

@@ -1,0 +1,60 @@
+<?php
+
+namespace App\Filament\Admin\Widgets;
+
+use App\Models\Task;
+use Filament\Actions\BulkActionGroup;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
+use Filament\Widgets\TableWidget;
+use Illuminate\Database\Eloquent\Builder;
+
+class LatestTasks extends TableWidget
+{
+    protected int|string|array $columnSpan = 'full';
+
+    protected static ?int $sort = 2;
+
+    public function table(Table $table): Table
+    {
+        return $table
+            ->query(fn (): Builder => Task::query())
+            ->heading(__('Latest Tasks'))
+            ->columns([
+                TextColumn::make('taskTypeWithTrashed.name')
+                    ->label(__('Task Type'))
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('userWithTrashed.name')
+                    ->label(__('Employee'))
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('actual_time')
+                    ->label(__('Task Duration (Hours)'))
+                    ->numeric()
+                    ->sortable(),
+                TextColumn::make('comment')
+                    ->label(__('Comment'))
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('created_at')
+                    ->label(__('Created At'))
+                    ->dateTime('d M Y H:i')
+                    ->sortable(),
+            ])
+            ->filters([
+                //
+            ])
+            ->headerActions([
+                //
+            ])
+            ->recordActions([
+                //
+            ])
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    //
+                ]),
+            ]);
+    }
+}

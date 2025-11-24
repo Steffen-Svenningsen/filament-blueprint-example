@@ -97,6 +97,20 @@ class User extends Authenticatable implements FilamentUser, HasAppAuthentication
         return $user ? "{$user->name} ({$user->tasks_count})" : __('No tasks this week');
     }
 
+    public static function getUserWithMostHoursThisWeek(): string
+    {
+        $startOfWeek = now()->startOfWeek();
+        $endOfWeek = now()->endOfWeek();
+
+        $user = static::withSum(['tasks' => function ($query) use ($startOfWeek, $endOfWeek) {
+            $query->whereBetween('created_at', [$startOfWeek, $endOfWeek]);
+        }], 'hours')
+            ->orderByDesc('tasks_sum_hours')
+            ->first();
+
+        return $user ? "{$user->name} ({$user->tasks_sum_hours} ".__('hrs').')' : __('No hours logged this week');
+    }
+
     public function tasks()
     {
         return $this->hasMany(Task::class);

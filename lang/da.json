@@ -172,5 +172,10 @@
     "___WIDGET___": "========== Widget ==========",
     "User with Most Tasks This Week": "Medarbejder med flest opgaver denne uge",
     "Create a task": "Opret en opgave",
-    "Click here to go directly to creating a task": "Klik her for at gå direkte til oprettelse af en opgave"
+    "Click here to go directly to creating a task": "Klik her for at gå direkte til oprettelse af en opgave",
+    "User with Most Hours This Week": "Medarbejder med flest timer denne uge",
+    "Total Submitted Tasks This Week": "Totalt antal indsendte opgaver denne uge",
+    "Latest Tasks": "Seneste opgaver",
+    "No tasks this week": "Ingen opgaver denne uge",
+    "hrs": "timer"
 }
