@@ -18,7 +18,11 @@ class LatestTasks extends TableWidget
     public function table(Table $table): Table
     {
         return $table
-            ->query(fn (): Builder => Task::query())
+            ->query(fn (): Builder => Task::query()
+                ->latest()
+                ->limit(10)
+            )
+            ->paginated(false)
             ->heading(__('Latest Tasks'))
             ->columns([
                 TextColumn::make('taskTypeWithTrashed.name')
