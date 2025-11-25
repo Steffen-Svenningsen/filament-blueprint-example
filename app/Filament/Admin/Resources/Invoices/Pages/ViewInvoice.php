@@ -27,6 +27,7 @@ class ViewInvoice extends ViewRecord
             Action::make('download')
                 ->label(__('Download PDF'))
                 ->icon(Heroicon::OutlinedArrowDownTray)
+                ->extraAttributes(['class' => 'fi-button-secondary page-header-action'])
                 ->action(function (Invoice $record) {
                     $settings = InvoiceSetting::first();
 

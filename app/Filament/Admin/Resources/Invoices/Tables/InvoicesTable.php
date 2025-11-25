@@ -77,6 +77,7 @@ class InvoicesTable
                 Action::make('download')
                     ->label(__('Download PDF'))
                     ->icon(Heroicon::OutlinedArrowDownTray)
+                    ->extraAttributes(['class' => 'fi-ta-button-secondary'])
                     ->action(function (Invoice $record) {
                         $settings = InvoiceSetting::first();
 
@@ -92,8 +93,10 @@ class InvoicesTable
 
                         return redirect()->route('invoices.download', $record);
                     }),
-                EditAction::make(),
-                DeleteAction::make(),
+                EditAction::make()
+                    ->extraAttributes(['class' => 'fi-ta-button-secondary']),
+                DeleteAction::make()
+                    ->extraAttributes(['class' => 'fi-ta-button-primary']),
             ])
             ->recordUrl(function ($record) {
                 return route('filament.admin.resources.invoices.view', $record);

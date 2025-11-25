@@ -116,8 +116,10 @@ class TasksTable
                 CreateAction::make(),
             ])
             ->recordActions([
-                EditAction::make(),
-                DeleteAction::make(),
+                EditAction::make()
+                    ->extraAttributes(['class' => 'fi-ta-button-secondary']),
+                DeleteAction::make()
+                    ->extraAttributes(['class' => 'fi-ta-button-primary']),
             ])
             ->recordUrl(function ($record) {
                 return route('filament.app.resources.tasks.view', $record);

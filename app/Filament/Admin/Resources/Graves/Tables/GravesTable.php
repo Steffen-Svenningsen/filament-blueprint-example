@@ -49,8 +49,10 @@ class GravesTable
                     ->multiple(),
             ], layout: FiltersLayout::Modal)
             ->recordActions([
-                EditAction::make(),
-                DeleteAction::make(),
+                EditAction::make()
+                    ->extraAttributes(['class' => 'fi-ta-button-secondary']),
+                DeleteAction::make()
+                    ->extraAttributes(['class' => 'fi-ta-button-primary']),
             ])
             ->headerActions([
                 ExportAction::make()

@@ -37,15 +37,30 @@ dt.fi-in-entry-label {
 
 /* Secondary button */
 .fi-button-secondary {
-    @apply bg-transparent outline-solid outline-1 outline-gray-300 font-medium text-gray-950 hover:bg-gray-50;
+    @apply bg-transparent outline-solid outline-1 outline-gray-300 font-medium text-gray-950 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-900!;
 
     svg {
-        @apply text-gray-950;
+        @apply text-gray-950 dark:text-white;
     }
 }
 
 .fi-button-secondary.page-header-action {
     @apply hover:bg-white;
+
+    &:has(svg) {
+        svg {
+            @apply text-gray-950 dark:text-white;
+        }
+    }
+}
+
+/* Table record action buttons */
+.fi-ta-button-primary {
+    @apply bg-transparent p-2 rounded-lg border border-primary-600 text-primary-600 hover:bg-white dark:hover:bg-gray-900! hover:no-underline;
+}
+
+.fi-ta-button-secondary {
+    @apply bg-transparent text-gray-950 dark:text-white p-2 rounded-lg border border-gray-300 hover:bg-white dark:hover:bg-gray-900! hover:no-underline;
 }
 
 /* Multifactor authentication styles */
