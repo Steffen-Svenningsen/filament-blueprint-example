@@ -34,4 +34,14 @@ class Customer extends Model
             'id' => 'integer',
         ];
     }
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
+
+    public function invoices()
+    {
+        return $this->hasMany(Invoice::class);
+    }
 }

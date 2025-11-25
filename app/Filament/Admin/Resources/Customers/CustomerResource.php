@@ -6,6 +6,8 @@ use App\Filament\Admin\Resources\Customers\Pages\CreateCustomer;
 use App\Filament\Admin\Resources\Customers\Pages\EditCustomer;
 use App\Filament\Admin\Resources\Customers\Pages\ListCustomers;
 use App\Filament\Admin\Resources\Customers\Pages\ViewCustomer;
+use App\Filament\Admin\Resources\Customers\RelationManagers\InvoicesRelationManager;
+use App\Filament\Admin\Resources\Customers\RelationManagers\TasksRelationManager;
 use App\Filament\Admin\Resources\Customers\Schemas\CustomerForm;
 use App\Filament\Admin\Resources\Customers\Schemas\CustomerInfolist;
 use App\Filament\Admin\Resources\Customers\Tables\CustomersTable;
@@ -75,7 +77,8 @@ class CustomerResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            InvoicesRelationManager::class,
+            TasksRelationManager::class,
         ];
     }
 

@@ -185,5 +185,7 @@
     "Your Number of Submitted Hours This Week incl. Breaks": "Dine antal registrerede timer denne uge inkl. pauser",
 
     "___RELATIONMANAGER___": "========== RelationManager ==========",
-    "Employee Tasks": "Medarbejderens opgaver"
+    "Employee Tasks": "Medarbejderens opgaver",
+    "Tasks related to this Customer": "Opgaver relateret til denne kunde",
+    "Invoices related to this Customer": "Fakturaer relateret til denne kunde"
 }
