@@ -63,6 +63,11 @@ class Task extends Model
         return $this->hours - $this->break_hours;
     }
 
+    public function scopeThisWeek($query)
+    {
+        return $query->whereBetween('created_at', [now()->startOfWeek(), now()->endOfWeek()]);
+    }
+
     public function taskType(): BelongsTo
     {
         return $this->belongsTo(TaskType::class);
