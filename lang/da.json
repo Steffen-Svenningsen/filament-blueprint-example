@@ -137,6 +137,8 @@
     "Tax": "Moms",
     "e.g. Transport, Broken bricks etc.": "f.eks. Transport, Knust tegl osv.",
     "Adding a custom service will override the selected service.": "Tilføjelse af en brugerdefineret ydelse vil overskrive den valgte ydelse.",
+    "invoices": "fakturaer",
+    "Download Selected": "Download valgte",
 
     "__INVOICE SETTINGS__": "========== Invoice Settings ==========",
     "Invoice Settings": "Fakturaindstillinger",

@@ -4,7 +4,9 @@ namespace App\Filament\Admin\Resources\Invoices\Tables;
 
 use App\Models\Invoice;
 use App\Models\InvoiceSetting;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Filament\Actions\Action;
+use Filament\Actions\BulkAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
@@ -16,9 +18,11 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Collection;
 use Malzariey\FilamentDaterangepickerFilter\Enums\DropDirection;
 use Malzariey\FilamentDaterangepickerFilter\Enums\OpenDirection;
 use Malzariey\FilamentDaterangepickerFilter\Filters\DateRangeFilter;
+use ZipArchive;
 
 class InvoicesTable
 {
@@ -104,10 +108,46 @@ class InvoicesTable
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
-                    // TODO: Implement download bulk action
-                    // Action::make('download')
-                    //     ->label(__('Download PDFs'))
-                    //     ->icon(Heroicon::OutlinedArrowDownTray),
+                    BulkAction::make('download_zip')
+                        ->label(__('Download Selected'))
+                        ->icon(Heroicon::OutlinedArrowDownTray)
+                        ->action(function (Collection $records) {
+                            $settings = InvoiceSetting::first();
+
+                            if (! $settings) {
+                                Notification::make()
+                                    ->title(__('Missing Invoice Settings'))
+                                    ->body(__('Configure settings first.'))
+                                    ->danger()
+                                    ->send();
+
+                                return;
+                            }
+
+                            $zipFileName = __('invoices').'_'.now()->format('d-m-Y').'.zip';
+                            $zipPath = sys_get_temp_dir().'/'.$zipFileName;
+
+                            $zip = new ZipArchive;
+
+                            if ($zip->open($zipPath, ZipArchive::CREATE) === true) {
+
+                                foreach ($records as $invoice) {
+                                    $pdfContent = Pdf::loadView('pdf.invoice', [
+                                        'invoice' => $invoice,
+                                        'settings' => $settings,
+                                    ])->output();
+
+                                    $filenameInZip = __('Invoice')."_{$invoice->invoice_number}.pdf";
+
+                                    $zip->addFromString($filenameInZip, $pdfContent);
+                                }
+
+                                $zip->close();
+                            }
+
+                            return response()->download($zipPath, $zipFileName)->deleteFileAfterSend();
+                        })
+                        ->deselectRecordsAfterCompletion(),
                 ]),
             ]);
     }
