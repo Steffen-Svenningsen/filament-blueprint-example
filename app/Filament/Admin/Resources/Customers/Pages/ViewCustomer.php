@@ -3,6 +3,8 @@
 namespace App\Filament\Admin\Resources\Customers\Pages;
 
 use App\Filament\Admin\Resources\Customers\CustomerResource;
+use App\Filament\Admin\Resources\Customers\RelationManagers\InvoicesRelationManager;
+use App\Filament\Admin\Resources\Customers\RelationManagers\TasksRelationManager;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
@@ -20,6 +22,14 @@ class ViewCustomer extends ViewRecord
     public function getTitle(): string|Htmlable
     {
         return $this->record->name;
+    }
+
+    public function getRelationManagers(): array
+    {
+        return [
+            InvoicesRelationManager::class,
+            TasksRelationManager::class,
+        ];
     }
 
     protected function getHeaderActions(): array

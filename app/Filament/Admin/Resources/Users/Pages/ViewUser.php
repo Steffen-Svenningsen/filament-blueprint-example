@@ -2,6 +2,7 @@
 
 namespace App\Filament\Admin\Resources\Users\Pages;
 
+use App\Filament\Admin\Resources\Users\RelationManagers\TasksRelationManager;
 use App\Filament\Admin\Resources\Users\UserResource;
 use App\Filament\Admin\Widgets\TimeOverview;
 use Filament\Actions\DeleteAction;
@@ -29,6 +30,13 @@ class ViewUser extends ViewRecord
             TimeOverview::make([
                 'userId' => $this->record->id,
             ]),
+        ];
+    }
+
+    public function getRelationManagers(): array
+    {
+        return [
+            TasksRelationManager::class,
         ];
     }
 
