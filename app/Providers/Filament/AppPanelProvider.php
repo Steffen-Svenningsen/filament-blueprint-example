@@ -3,6 +3,8 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Auth\Login;
+use App\Filament\Widgets\LatestTasks;
+use App\Filament\Widgets\StatsOverview;
 use App\Livewire\TaskShortcut;
 use Filament\Actions\Action;
 use Filament\Auth\MultiFactor\App\AppAuthentication;
@@ -49,10 +51,12 @@ class AppPanelProvider extends PanelProvider
             ->pages([
                 Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
+            // ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
                 AccountWidget::class,
                 TaskShortcut::class,
+                StatsOverview::class,
+                LatestTasks::class,
             ])
             ->plugins([
                 FilamentEditProfilePlugin::make()

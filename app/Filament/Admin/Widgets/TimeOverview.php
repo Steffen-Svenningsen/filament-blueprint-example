@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Filament\Widgets;
+namespace App\Filament\Admin\Widgets;
 
 use App\Models\Task;
 use Filament\Widgets\Widget;
 
-class TimeOverviewWidget extends Widget
+class TimeOverview extends Widget
 {
-    protected string $view = 'filament.widgets.time-overview-widget';
+    protected string $view = 'filament.admin.widgets.time-overview';
 
     protected int|string|array $columnSpan = 'full';
 

@@ -2,6 +2,9 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Admin\Widgets\LatestInvoices;
+use App\Filament\Admin\Widgets\LatestTasks;
+use App\Filament\Admin\Widgets\StatsOverview;
 use App\Filament\Auth\Login;
 use App\Livewire\TaskShortcut;
 use Filament\Actions\Action;
@@ -55,10 +58,13 @@ class AdminPanelProvider extends PanelProvider
             ->pages([
                 Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Admin/Widgets'), for: 'App\Filament\Admin\Widgets')
+            // ->discoverWidgets(in: app_path('Filament/Admin/Widgets'), for: 'App\Filament\Admin\Widgets')
             ->widgets([
                 AccountWidget::class,
                 TaskShortcut::class,
+                StatsOverview::class,
+                LatestTasks::class,
+                LatestInvoices::class,
             ])
             ->plugins([
                 FilamentEditProfilePlugin::make()

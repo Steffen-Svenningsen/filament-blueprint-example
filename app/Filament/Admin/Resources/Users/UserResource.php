@@ -10,6 +10,7 @@ use App\Filament\Admin\Resources\Users\RelationManagers\TasksRelationManager;
 use App\Filament\Admin\Resources\Users\Schemas\UserForm;
 use App\Filament\Admin\Resources\Users\Schemas\UserInfolist;
 use App\Filament\Admin\Resources\Users\Tables\UsersTable;
+use App\Filament\Admin\Widgets\TimeOverview;
 use App\Models\User;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -71,6 +72,13 @@ class UserResource extends Resource
     public static function table(Table $table): Table
     {
         return UsersTable::configure($table);
+    }
+
+    public static function getWidgets(): array
+    {
+        return [
+            TimeOverview::class,
+        ];
     }
 
     public static function getRelations(): array

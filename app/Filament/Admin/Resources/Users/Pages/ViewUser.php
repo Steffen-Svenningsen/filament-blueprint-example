@@ -3,7 +3,7 @@
 namespace App\Filament\Admin\Resources\Users\Pages;
 
 use App\Filament\Admin\Resources\Users\UserResource;
-use App\Filament\Widgets\TimeOverviewWidget;
+use App\Filament\Admin\Widgets\TimeOverview;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
@@ -20,7 +20,7 @@ class ViewUser extends ViewRecord
     public function getFooterWidgets(): array
     {
         return [
-            TimeOverviewWidget::make([
+            TimeOverview::make([
                 'userId' => $this->record->id,
             ]),
         ];
