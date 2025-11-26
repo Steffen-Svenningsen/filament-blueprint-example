@@ -200,5 +200,8 @@
     "___RELATIONMANAGER___": "========== RelationManager ==========",
     "Employee Tasks": "Medarbejderens opgaver",
     "Tasks related to this Customer": "Opgaver relateret til denne kunde",
-    "Invoices related to this Customer": "Fakturaer relateret til denne kunde"
+    "Invoices related to this Customer": "Fakturaer relateret til denne kunde",
+
+    "___URL GENERIC___": "========== URL Generic ==========",
+    "Worktasks": "Arbejdsopgaver"
 }

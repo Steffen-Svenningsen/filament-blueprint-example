@@ -6,12 +6,18 @@ use App\Filament\Admin\Resources\Areas\AreaResource;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
+use Illuminate\Contracts\Support\Htmlable;
 
 class ViewArea extends ViewRecord
 {
     protected static string $resource = AreaResource::class;
 
     public function getHeading(): string
+    {
+        return $this->record->name;
+    }
+
+    public function getTitle(): string|Htmlable
     {
         return $this->record->name;
     }

@@ -60,6 +60,11 @@ class TaskResource extends Resource
         return __('Worktask');
     }
 
+    public static function getPluralModelLabel(): string
+    {
+        return __('Worktasks');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return TaskForm::configure($schema);

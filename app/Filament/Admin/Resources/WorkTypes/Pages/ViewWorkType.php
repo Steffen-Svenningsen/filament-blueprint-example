@@ -6,12 +6,18 @@ use App\Filament\Admin\Resources\WorkTypes\WorkTypeResource;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
+use Illuminate\Contracts\Support\Htmlable;
 
 class ViewWorkType extends ViewRecord
 {
     protected static string $resource = WorkTypeResource::class;
 
-    public function getTitle(): string
+    public function getHeading(): string
+    {
+        return $this->record->name;
+    }
+
+    public function getTitle(): string|Htmlable
     {
         return $this->record->name;
     }

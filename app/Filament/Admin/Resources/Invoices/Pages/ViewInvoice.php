@@ -11,12 +11,18 @@ use Filament\Actions\EditAction;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\ViewRecord;
 use Filament\Support\Icons\Heroicon;
+use Illuminate\Contracts\Support\Htmlable;
 
 class ViewInvoice extends ViewRecord
 {
     protected static string $resource = InvoiceResource::class;
 
     public function getHeading(): string
+    {
+        return $this->record->invoice_number;
+    }
+
+    public function getTitle(): string|Htmlable
     {
         return $this->record->invoice_number;
     }
